@@ -1,0 +1,74 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+MAKE YOUR ENGLISH GREAT AGAIN
+{% endblock %}
+
+{% block page-lead %}
+Добро пожаловать в Slang English Learning. <br/>
+На нашем сайте вы сможете изучить необычные сленговые слова в английском языке, которые
+часто встречаются в популярных сериалах и проверить полученные знания. Также если вы нашли для себя новое сленговые слова,
+которых нет в просмотренном вами списке, вы сможете добавить их в базу данных, и тогда другие пользователи смогут изучить их тоже.
+{% endblock %}
+
+{% block content %}
+<div class="container px-4 py-5" id="project-contents">
+    <h2 class="pb-2 border-bottom">Ну что, приступим?</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="col d-flex">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#cpu-fill"></use>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2">Изучите слова</h3>
+                <p>Таблица с со сленговыми словами для изучения.</p>
+                <a href="/terms-list" class="btn btn-primary">Посмотреть</a>
+            </div>
+        </div>
+        <div class="col d-flex">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#cpu-fill"></use>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2">Форма для проверки</h3>
+                <p>Проверте свои знания по изученным словам</p>
+                <a href="/check-terms" class="btn btn-primary">
+                    Проверить
+                </a>
+            </div>
+        </div>
+        <div class="col d-flex">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#cpu-fill"></use>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2">Форма для заполнения</h3>
+                <p>Добавьте новые сленговые слова, которые вы не увидели в нашей таблице.</p>
+                <a href="/add-term" class="btn btn-primary">
+                    Добавить
+                </a>
+            </div>
+        </div>
+        <div class="col d-flex">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#cpu-fill"></use>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2">Посмотреть результаты</h3>
+                <p>Можете посмотреть результаты за последнюю попытку в тесте.</p>
+                <a href="/stats" class="btn btn-primary">
+                    Посмотреть
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
