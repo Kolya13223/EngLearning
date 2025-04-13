@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container px-4 py-5" id="terms-table">
+<div class="container px-4 py-5" id="words-table">
     <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
@@ -20,10 +20,10 @@
             </tr>
           </thead>
           <tbody>
-            {% for cnt, term, definition in terms %}
+            {% for cnt, word, definition in words %}
             <tr>
                 <td class="py-3">{{ cnt }}</td>
-                <td class="py-3">{{ term }}</td>
+                <td class="py-3">{{ word }}</td>
                 <td class="py-3">{{ definition }}</td>
             </tr>
             {% endfor %}

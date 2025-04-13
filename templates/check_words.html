@@ -1,0 +1,42 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Провертье полученные знания
+{% endblock %}
+
+{% block page-lead %}
+К каждому слову вам нужно подобрать правильный перевод
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5" id="word-check">
+
+    {% if error %}
+    <div class="alert alert-danger">
+    {{ error }}
+    </div>
+    {% endif %}
+    <form method="post" action="/check-test">
+        {% csrf_token %}
+        {% for word in words %}
+        {% with forloop.counter0 as i %}
+        <div class="row mb-4 align-items-center">
+            <div class="col-md-3">
+                <h3>{{ word.word }}</h3>
+            </div>
+            <div class="col-md-6">
+                <select class="form-select form-select-lg" name="answer_{{ i }}" style="height: 50px;" required>
+                    <option value="" disabled selected>Выберите перевод</option>
+                    {% for oneTranslation in words %}
+                    <option value="{{ oneTranslation.id_of_answer }}">{{ oneTranslation.translation }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        {% endwith %}
+        {% endfor %}
+        <button type="submit" class="btn btn-primary" >Проверить ответы</button>
+    </form>
+</div>
+{% endblock %}
+

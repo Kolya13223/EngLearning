@@ -1,4 +1,4 @@
-"""proj_maths URL Configuration
+"""EngLearning URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -19,8 +19,10 @@ from . import views
 
 urlpatterns = [
     path('', views.index),
-    path('terms-list', views.terms_list),
-    path('add-term', views.add_term),
-    path('send-term', views.send_term),
+    path('check-test', views.check_test),
+    path('words-list', views.words_list),
+    path('check-words', views.check_words),
+    path('word-add', views.word_add),
+    path('send-word', views.send_word),
     path('stats', views.show_stats)
 ]
