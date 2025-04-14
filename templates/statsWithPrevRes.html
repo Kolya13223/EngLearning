@@ -1,0 +1,50 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Статистика по терминам
+{% endblock %}
+
+{% block page-lead %}
+Перед тем, как отрендерить эту страницу, веб-приложение ходит в файл/БД, обновляет статистики, а затем подставляет их в шаблон страницы.
+Всё это можно посмотреть в файле <code>views.py</code>.
+{% endblock %}
+
+{% block content %}
+<div class="container px-4 py-5" id="stats">
+    <div>
+        <h3 class="py-2">Статистика попыток в тесте</h3>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-4">
+            <h4>{{ count_of_iters }}</h4>
+            <p class="text-muted"> количество попыток</p>
+        </div>
+        <div class="col-md-4">
+            <h4>{{ prev_precentage }}</h4>
+            <p class="text-muted"> набрано в последнюю попытку </p>
+        </div>
+        <div class="col-md-4">
+            <h4>{{ max_res }}</h4>
+            <p class="text-muted"> максимальный результат </p>
+        </div>
+    </div>
+    <div>
+        <h3 class="py-2">Количество терминов</h3>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-4">
+            <h4>{{ words_all }}</h4>
+            <p class="text-muted">всего</p>
+        </div>
+        <div class="col-md-4">
+            <h4>{{ words_own }}</h4>
+            <p class="text-muted">изначально бывших в базе</p>
+        </div>
+        <div class="col-md-4">
+            <h4>{{ words_added }}</h4>
+            <p class="text-muted">добавленных через <a href="/word-add">форму добавления термина</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

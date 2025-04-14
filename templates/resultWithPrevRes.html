@@ -1,0 +1,30 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Результаты теста
+{% endblock %}
+
+{% block page-lead %}
+{% endblock %}
+
+{% block content %}
+<div class="container px-4 py-5" id="stats">
+    <div class="row text-center">
+        <div style="font-size: 18px; margin-bottom: 10px;">
+        <strong>Правильных ответов:</strong> <h4>{{ correct }} из {{numOfWords}}</h4>
+        </div>
+        <div class="divider"></div>
+        <div style="font-size: 18px; margin-bottom: 10px;">
+        <strong>В процентом соотношении:</strong> <h4>{{ percentage }} %</h4>
+        </div>
+        <div class="divider"></div>
+        <div style="font-size: 18px; margin-bottom: 10px;">
+        <strong>Результат в предыдущий раз:</strong> <h4>{{ prev_percentage }} %</h4>
+        </div>
+    </div>
+    <a href="/check-words" class="btn btn-primary"> Попробовать ещё раз</a>
+    <a href="/" class="btn btn-primary"> На главную</a>
+    <a href="/stats" class="btn btn-primary"> Посмотреть статистику</a>
+</div>
+{% endblock %}
+
